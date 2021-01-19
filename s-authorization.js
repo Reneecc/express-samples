@@ -19,9 +19,11 @@ app.use(function(request, response, next) {
   }
 });
 
+//如果密码这一行代码在前面 ，那么就不会执行下面的函数
 app.use(function(request, response) {
   response.end('Secret info: the password is "swordfish"!'); // 发送密码信息
 });
+
 
 //http.createServer()该方法通过其回调函数来处理每一次的网络请求，并且进行响应。
 http.createServer(app).listen(3000,function(){
